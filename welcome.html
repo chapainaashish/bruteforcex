@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script>
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var email = urlParams.get('email');
+            if (email) {
+                document.getElementById('welcome').textContent = 'You are successfully logged in as: ' + email;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="welcome"></h1>
+</body>
+
+</html>
