@@ -5,58 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log IN</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        input {
-            display: block;
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: 100%;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            font-size: 14px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .error {
-            color: red;
-            display: none;
-            text-align: center;
-        }
-
-        .login {
-            text-align: center;
-        }
-    </style>
     <script>
         function handleLogin(event) {
             if (event && typeof event.preventDefault === 'function') {
@@ -114,18 +62,6 @@
             }, 2000); // 2 seconds
         }
     </script>
-
-    <script>
-        function validateForm() {
-            var response = grecaptcha.getResponse();
-            if (response.length == 0) {
-                document.getElementById('captcha_error').innerHTML = "Please check the reCAPTCHA checkbox.";
-                return false;
-            }
-            document.getElementById('captcha_error').innerHTML = "";
-            return true;
-        }
-    </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
@@ -136,10 +72,6 @@
         <p class="login">Log in to Facebool</p>
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
-        <div class="col-12 form-group">
-            <div class="g-recaptcha" data-sitekey="6LdiA9EpAAAAAG6NPQU_r04UKJXkgoaL5ehr8B4i"></div>
-            <div class="help-block with-errors" id="captcha_error"></div>
-        </div>
         <p id="error" class="error">Incorrect email or password</p>
         <button type="submit">Login</button>
     </form>
